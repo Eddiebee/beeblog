@@ -23,35 +23,37 @@ const BlogPost = ({ data }) => {
     <Layout>
       <Wrapper>
         <section className="info">
-          <GatsbyImage
-            image={pathToBanner}
-            alt={banner.title}
-            className="banner"
-          />
-          <div className=" overlay">
-            <header>
-              <h1>{title}</h1>
-              <GatsbyImage
-                image={pathToAuthorImg}
-                alt={author.name}
-                className="author-avatar"
-              />
-              <p>
-                Written by &nbsp;
-                <a
-                  href={author.website}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={`${author.name}'s website`}
-                >
-                  {author.name}
-                </a>
-                &nbsp;
-                <i className="date">{date}</i>
-              </p>
-              <p className="hash-tags">{hashTags}</p>
-            </header>
+          <div className="info-banner">
+            <GatsbyImage
+              image={pathToBanner}
+              alt={banner.title}
+              className="banner"
+            />
           </div>
+        </section>
+        <section className="overlay">
+          <header>
+            <h1>{title}</h1>
+            <GatsbyImage
+              image={pathToAuthorImg}
+              alt={author.name}
+              className="author-avatar"
+            />
+            <p>
+              Written by &nbsp;
+              <a
+                href={author.website}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`${author.name}'s website`}
+              >
+                {author.name}
+              </a>
+              &nbsp;
+              <i className="date">{date}</i>
+            </p>
+            <p className="hash-tags">{hashTags}</p>
+          </header>
         </section>
         <section className="content">
           {documentToReactComponents(rawDocument)}
@@ -108,9 +110,12 @@ const Wrapper = styled.section`
     margin: 1rem;
   }
 
-  .banner {
+  .info-banner {
     position: sticky;
     top: 0;
+  }
+
+  .banner {
     height: 40vh;
     background-color: var(--black);
   }
@@ -123,21 +128,12 @@ const Wrapper = styled.section`
     top: 0;
   }
 
-  .info {
-    position: relative;
-  }
-
-  .info header {
-    position: sticky;
-    top: 0;
+  .overlay header {
     padding: 10px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     color: var(--white);
-  }
-
-  .info header h1 {
   }
 
   .hash-tags {
@@ -151,6 +147,11 @@ const Wrapper = styled.section`
     width: 50px;
     border-radius: 50%;
     margin-bottom: 10px;
+  }
+
+  .info {
+    position: sticky;
+    top: 0;
   }
 
   .content {
