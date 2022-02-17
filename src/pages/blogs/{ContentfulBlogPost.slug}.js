@@ -116,16 +116,17 @@ const Wrapper = styled.section`
   }
 
   .banner {
-    height: 40vh;
+    height: 32vh;
     background-color: var(--black);
   }
 
   .overlay {
     width: 100%;
-    height: 40vh;
+    min-height: 32vh;
     background: rgba(0, 0, 0, 0.3);
     position: sticky;
     top: 0;
+    margin-bottom: 1.5rem;
   }
 
   .overlay header {
@@ -133,6 +134,7 @@ const Wrapper = styled.section`
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    align-items: center;
     color: var(--white);
   }
 
