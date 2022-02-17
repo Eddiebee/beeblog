@@ -7,24 +7,24 @@ const Blog = ({ title, date, author, banner, tags, content }) => {
   const pathToBanner = getImage(banner)
   return (
     <Wrapper>
-      <div className="banner sticky">
+      <div className="banner sticky text-pop-up-right">
         <GatsbyImage
           image={pathToBanner}
           alt="banner"
           className="banner sticky"
         />
       </div>
-      <div className="heading sticky">
+      <div className="heading sticky text-pop-up-right">
         <h2>{title}</h2>
         <h4>{date}</h4>
-        <p>{author.name}</p>
         <GatsbyImage
           image={pathToImage}
           alt={title}
           className="author-avatar"
         />
+        <p>{author.name}</p>
       </div>
-      <div className="tags sticky">{tags}</div>
+      <div className="tags sticky text-pop-up-right">{tags}</div>
       <div className="content">{content}</div>
     </Wrapper>
   )
@@ -112,6 +112,44 @@ const Wrapper = styled.article`
 
   .sticky {
     position: sticky;
+  }
+
+  /* animations from w: http://animista.net, t: @cssanimista */
+  .text-pop-up-right {
+    -webkit-animation: text-pop-up-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+      both;
+    animation: text-pop-up-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  @-webkit-keyframes text-pop-up-right {
+    0% {
+      -webkit-transform: translateX(50px);
+      transform: translateX(50px);
+      -webkit-transform-origin: 50% 50%;
+      transform-origin: 50% 50%;
+      text-shadow: none;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+      -webkit-transform-origin: 50% 50%;
+      transform-origin: 50% 50%;
+    }
+  }
+  @keyframes text-pop-up-right {
+    0% {
+      -webkit-transform: translateX(50px);
+      transform: translateX(50px);
+      -webkit-transform-origin: 50% 50%;
+      transform-origin: 50% 50%;
+      text-shadow: none;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+      -webkit-transform-origin: 50% 50%;
+      transform-origin: 50% 50%;
+    }
   }
 `
 export default Blog
