@@ -32,6 +32,41 @@ const Wrapper = styled.section`
     color: var(--white);
     text-align: center;
   }
+
+  /* animations from w: http://animista.net, t: @cssanimista */
+  .tracking-in-contract {
+    -webkit-animation: tracking-in-contract 2s
+      cubic-bezier(0.215, 0.61, 0.355, 1) 1000ms both;
+    animation: tracking-in-contract 2s cubic-bezier(0.215, 0.61, 0.355, 1)
+      1000ms both;
+  }
+
+  @-webkit-keyframes tracking-in-contract {
+    0% {
+      letter-spacing: 1em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      letter-spacing: normal;
+      opacity: 1;
+    }
+  }
+  @keyframes tracking-in-contract {
+    0% {
+      letter-spacing: 1em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      letter-spacing: normal;
+      opacity: 1;
+    }
+  }
 `
 export default function Home() {
   return (
@@ -46,7 +81,7 @@ export default function Home() {
             layout="fullWidth"
           ></StaticImage>
           <div className="hero-content">
-            <div className="hero-text">
+            <div className="hero-text tracking-in-contract">
               <h1>Welcome to Bee Blog</h1>
               <h4>...honey sweet blogs</h4>
             </div>
