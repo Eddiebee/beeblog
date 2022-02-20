@@ -18,7 +18,7 @@ const Wrapper = styled.nav`
   }
 
   header img {
-    width: 80px;
+    width: 50px;
   }
 
   header h1 {
@@ -44,7 +44,7 @@ const Wrapper = styled.nav`
   }
 
   header button svg {
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: var(--white);
   }
 
@@ -105,6 +105,10 @@ const Wrapper = styled.nav`
     header {
       padding: 5px 0;
       width: 100%;
+    }
+
+    header img {
+      width: 80px;
     }
 
     header button {
