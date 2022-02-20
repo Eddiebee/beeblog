@@ -99,6 +99,7 @@ a {
   cursor: pointer;
   appearance: none;
   color: var(--white);
+  text-transform: capitalize;
   background: var(--black);
   border: none;
   border-radius: var(--borderRadius);
