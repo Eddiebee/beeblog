@@ -173,6 +173,7 @@ const NavBar = () => {
             to="/contact"
             className="nav-link contact-link btn"
             activeClassName="active-link"
+            role="button"
           >
             Contact
           </Link>
