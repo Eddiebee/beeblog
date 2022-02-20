@@ -94,3 +94,16 @@ a {
   text-decoration: none;
   color: var(--black);
 }
+
+.contact-link {
+  cursor: pointer;
+  appearance: none;
+  color: var(--white);
+  background: var(--black);
+  border: none;
+  border-radius: var(--borderRadius);
+  letter-spacing: var(--letterSpacing);
+  padding: 0.5rem;
+  box-shadow: var(--shadow-1);
+  transition: var(--transition);
+}
