@@ -20,6 +20,10 @@ const Wrapper = styled.section`
     max-width: 50rem;
   }
 
+  a {
+    text-decoration: underline;
+  }
+
   /* animations from animista.net */
   .text-flicker-out-glow {
     -webkit-animation: text-flicker-out-glow 5s linear infinite both;
