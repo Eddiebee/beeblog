@@ -16,7 +16,7 @@ const Wrapper = styled.section`
     display: grid;
     grid-gap: 20px;
     img {
-      border-radius: 10px;
+      border-radius: var(--borderRadius);
     }
 
     /* media queries */
